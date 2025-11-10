@@ -1,0 +1,1062 @@
+
+/* UsersTable.css */
+.users-container {
+  margin-top: 1.5rem;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.modern-table thead {
+  background: linear-gradient( #393d61);
+  color: white;
+}
+
+.modern-table thead tr {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modern-table th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.modern-table th:last-child {
+  text-align: center;
+}
+
+.modern-table tbody tr {
+  border-bottom: 1px solid #f3f4f6;
+  transition: all 0.2s ease;
+}
+
+.modern-table tbody tr:hover {
+  background: #f9fafb;
+  transform: scale(1.01);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.modern-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.modern-table td {
+  padding: 1.25rem 1.5rem;
+  vertical-align: middle;
+}
+
+.modern-table td:last-child {
+  text-align: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar-wrapper {
+  flex-shrink: 0;
+}
+
+.avatar-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e5e7eb;
+  transition: transform 0.2s ease;
+}
+
+.avatar-img:hover {
+  transform: scale(1.1);
+  border-color: #667eea;
+}
+
+.avatar-fallback {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 2px solid #e5e7eb;
+  transition: transform 0.2s ease;
+}
+
+.avatar-fallback:hover {
+  transform: scale(1.1);
+}
+
+.user-name {
+  font-weight: 500;
+  color: #111827;
+  font-size: 0.95rem;
+}
+
+.email-cell {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.role-badge.admin {
+  background: linear-gradient(#7f8794);
+  color: white;
+}
+
+.role-badge.user {
+  background: #e5e7eb;
+  color: #4b5563;
+}
+
+.role-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.edit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: white;
+  border: 2px solid #667eea;
+  color: #667eea;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.edit-btn:hover {
+  background: #525a81;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.edit-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modern-table th,
+  .modern-table td {
+    padding: 0.875rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .avatar-img,
+  .avatar-fallback {
+    width: 32px;
+    height: 32px;
+    font-size: 0.875rem;
+  }
+
+  .edit-btn span {
+    display: none;
+  }
+
+  .edit-btn {
+    padding: 0.5rem 0.75rem;
+  }
+}
+/* Add these additional styles to UsersTable.css */
+
+.title-cell {
+  font-weight: 600;
+  color: #111827;
+}
+
+.description-cell {
+  color: #6b7280;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Status badges */
+.status-completed {
+  background: linear-gradient(#629e8a);
+  color: white;
+}
+
+.status-progress {
+  background: linear-gradient(#7f8794);
+  color: white;
+}
+
+.status-pending {
+  background: #e5e7eb;
+  color: #6d7888;
+}
+
+/* Priority badges */
+.priority-high {
+  background: linear-gradient(#6d7888);
+  color: white;
+}
+
+.priority-medium {
+  background: linear-gradient(#6d7888);
+  color: white;
+}
+
+.priority-low {
+  background: linear-gradient(#6d7888);
+  color: white;
+}
+
+/* Small avatars for assigned/created users */
+.avatar-small {
+  width: 32px;
+  height: 32px;
+  font-size: 0.75rem;
+}
+
+.avatar-info {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+}
+
+.avatar-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+/* Action buttons container */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: white;
+  border: 2px solid #ef4444;
+  color: #ef4444;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.delete-btn:hover {
+  background: #ef4444;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.delete-btn:active {
+  transform: translateY(0);
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  color: #9ca3af;
+  font-style: italic;
+  padding: 3rem 1.5rem !important;
+}
+
+/* Responsive adjustments for work items table */
+@media (max-width: 1024px) {
+  .description-cell {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .edit-btn span,
+  .delete-btn span {
+    display: none;
+  }
+
+  .description-cell {
+    max-width: 150px;
+  }
+}
+/* Add these additional styles to UsersTable.css */
+
+/* Table header section */
+.table-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+}
+
+.table-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  letter-spacing: -0.025em;
+}
+
+/* Employee ID badge */
+.employee-id-badge {
+  background: linear-gradient(#7f8794);
+  color: white;
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+}
+
+/* Tech/Role badge */
+.tech-badge {
+  background: #e5e7eb;
+  color: #4b5563;
+}
+
+/* Department cell */
+.department-cell {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Tiny avatar for employee user */
+.avatar-tiny {
+  width: 28px;
+  height: 28px;
+  font-size: 0.7rem;
+}
+
+/* Employee user info stacked layout */
+.employee-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.employee-user-name {
+  font-weight: 600;
+  color: #111827;
+  font-size: 0.875rem;
+  line-height: 1.2;
+}
+
+.employee-user-role {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  line-height: 1.2;
+}
+
+/* Action buttons with emoji */
+.edit-btn,
+.delete-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.edit-btn::before {
+  content: none;
+}
+
+.delete-btn::before {
+  content: none;
+}
+
+/* Responsive adjustments for employee table */
+@media (max-width: 1200px) {
+  .table-title {
+    font-size: 1.1rem;
+  }
+  
+  .modern-table th,
+  .modern-table td {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .employee-user-info {
+    display: none;
+  }
+  
+  .user-info {
+    justify-content: center;
+  }
+  
+  .department-cell {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-header {
+    padding: 1rem;
+  }
+  
+  .table-title {
+    font-size: 1rem;
+  }
+  
+  .modern-table th,
+  .modern-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .avatar-img,
+  .avatar-fallback {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .avatar-tiny {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .edit-btn span,
+  .delete-btn span {
+    display: none;
+  }
+}
+/* Add these additional styles to UsersTable.css */
+
+/* Salary Container */
+.salary-container {
+  height: calc(100vh - 200px);
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #667eea #f8f9fa;
+}
+
+.salary-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.salary-container::-webkit-scrollbar-track {
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.salary-container::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 4px;
+}
+
+.salary-container::-webkit-scrollbar-thumb:hover {
+  background: #5568d3;
+}
+
+/* Salary Header */
+.salary-header {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+  z-index: 10;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.salary-main-title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Alert Box */
+.alert-box {
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  animation: slideDown 0.3s ease;
+}
+
+.alert-danger {
+  background: #fee;
+  border: 1px solid #fcc;
+  color: #c33;
+}
+
+.retry-btn {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 2px solid #ef4444;
+  color: #ef4444;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.retry-btn:hover {
+  background: #ef4444;
+  color: white;
+}
+
+/* Loading Container */
+.loading-container {
+  text-align: center;
+  padding: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e5e7eb;
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modern Card */
+.card-modern {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.card-header-modern {
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.card-header-modern h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.card-body-modern {
+  padding: 1.5rem;
+}
+
+/* Filter Grid */
+.filter-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 1rem;
+  align-items: end;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Form Elements */
+.form-label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-select-modern,
+.form-input-modern {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background: white;
+  font-family: inherit;
+}
+
+.form-select-modern:focus,
+.form-input-modern:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+/* Buttons */
+.btn-primary-modern {
+  padding: 0.75rem 1.75rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary-modern {
+  padding: 0.75rem 1.5rem;
+  background: white;
+  color: #6b7280;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary-modern:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
+}
+
+/* Table specific styles for salary */
+.table-wrapper-no-padding {
+  padding: 0;
+}
+
+.month-badge {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(6, 182, 212, 0.3);
+}
+
+.year-cell {
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.amount-value {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #10b981;
+  font-family: 'Courier New', monospace;
+}
+
+.status-cancelled {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+}
+
+.remarks-cell {
+  color: #6b7280;
+  font-style: italic;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-actions {
+    width: 100%;
+  }
+  
+  .filter-actions button {
+    flex: 1;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .salary-main-title {
+    font-size: 1.25rem;
+  }
+  
+  .card-header-modern h5 {
+    font-size: 1rem;
+  }
+  
+  .amount-value {
+    font-size: 1rem;
+  }
+  
+  .remarks-cell {
+    max-width: 100px;
+  }
+}
+/* Add these additional styles to UsersTable.css */
+
+/* Attendance Filter Grid */
+.attendance-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  gap: 1rem;
+  align-items: end;
+}
+
+/* Attendance Form Grid */
+.attendance-form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Date Cell */
+.date-cell {
+  font-weight: 700;
+  color: #111827;
+  font-size: 0.95rem;
+}
+
+/* Time Values */
+.time-value {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.check-in {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.check-out {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+/* Status Badge - Half Day */
+.status-halfday {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(6, 182, 212, 0.3);
+}
+
+/* Hours Worked */
+.hours-worked {
+  font-weight: 700;
+  color: #667eea;
+  font-size: 1rem;
+  font-family: 'Courier New', monospace;
+}
+
+/* Text Muted */
+.text-muted {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* Responsive - Attendance */
+@media (max-width: 1200px) {
+  .attendance-filter-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .filter-actions {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+  
+  .filter-actions button {
+    flex: 1;
+  }
+  
+  .attendance-form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .attendance-filter-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .attendance-form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .date-cell {
+    font-size: 0.85rem;
+  }
+  
+  .time-value {
+    font-size: 0.85rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .hours-worked {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===========================
+   Dark Theme Overrides
+   =========================== */
+
+body[data-theme="dark"] {
+  background-color: #0b1120;
+  color: #e2e8f0;
+}
+
+body[data-theme="dark"] .table-wrapper {
+  background: #111827;
+  border-color: #1f2937;
+  box-shadow: none;
+}
+
+body[data-theme="dark"] .modern-table thead {
+  background: linear-gradient(135deg, #1f2937 0%, #0f172a 100%);
+  color: #e2e8f0;
+}
+
+body[data-theme="dark"] .modern-table th,
+body[data-theme="dark"] .modern-table td {
+  color: #e2e8f0;
+  border-color: #1f2937;
+}
+
+body[data-theme="dark"] .modern-table tbody tr {
+  border-bottom: 1px solid #1f2937;
+}
+
+body[data-theme="dark"] .modern-table tbody tr:hover {
+  background: #1e293b;
+  box-shadow: none;
+}
+
+body[data-theme="dark"] .role-badge.user,
+body[data-theme="dark"] .tech-badge,
+body[data-theme="dark"] .role-badge.status-pending {
+  background: #1e293b;
+  color: #cbd5f5;
+}
+
+body[data-theme="dark"] .empty-state {
+  color: #94a3b8;
+}
+
+body[data-theme="dark"] .card-modern,
+body[data-theme="dark"] .quick-stats-card,
+body[data-theme="dark"] .sales-analytics-card,
+body[data-theme="dark"] .distribution-card,
+body[data-theme="dark"] .orders-analytics-card {
+  background: #111827;
+  border-color: #1f2937;
+  box-shadow: none;
+}
+
+body[data-theme="dark"] .card-header-modern,
+body[data-theme="dark"] .table-header {
+  background: #0f172a;
+  border-color: #1f2937;
+}
+
+body[data-theme="dark"] .table-title,
+body[data-theme="dark"] .card-header-modern h5,
+body[data-theme="dark"] .form-label,
+body[data-theme="dark"] .card-title {
+  color: #e2e8f0;
+}
+
+body[data-theme="dark"] .user-name,
+body[data-theme="dark"] .employee-user-name,
+body[data-theme="dark"] .title-cell,
+body[data-theme="dark"] .date-cell {
+  color: #e2e8f0;
+}
+
+body[data-theme="dark"] .description-cell,
+body[data-theme="dark"] .email-cell,
+body[data-theme="dark"] .department-cell,
+body[data-theme="dark"] .remarks-cell,
+body[data-theme="dark"] .year-cell,
+body[data-theme="dark"] .stat-label,
+body[data-theme="dark"] .hours-worked {
+  color: #cbd5f5;
+}
+
+body[data-theme="dark"] .form-select-modern,
+body[data-theme="dark"] .form-input-modern {
+  background: #0f172a;
+  border-color: #1f2937;
+  color: #cbd5f5;
+}
+
+body[data-theme="dark"] .form-select-modern:focus,
+body[data-theme="dark"] .form-input-modern:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.25);
+}
+
+body[data-theme="dark"] .btn-secondary-modern {
+  background: transparent;
+  border-color: #1f2937;
+  color: #cbd5f5;
+}
+
+body[data-theme="dark"] .btn-secondary-modern:hover {
+  border-color: #334155;
+  background: #1e293b;
+}
+
+body[data-theme="dark"] .salary-container::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+body[data-theme="dark"] .switch .slider {
+  background-color: #334155;
+}
+
+.switch input:checked + .slider,
+body[data-theme="dark"] .switch input:checked + .slider {
+  background-color: #2563eb;
+}
+
+body[data-theme="dark"] .switch .slider:before {
+  background-color: #f8fafc;
+}
+
+.notification-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.notification-btn:hover {
+  transform: scale(1.05);
+}
+
+body[data-theme="dark"] .notification-btn {
+  color: #cbd5f5;
+}

@@ -1,0 +1,129 @@
+/* Horizontal Navigation - Secondary Nav (Chat Sub-Nav) */
+.horizontal-nav {
+  width: 100%;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 0;
+  z-index: 89;
+  transition: all 0.3s ease;
+}
+
+.horizontal-nav-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 2rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.horizontal-nav-container::-webkit-scrollbar {
+  height: 4px;
+}
+
+.horizontal-nav-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+.horizontal-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  position: relative;
+}
+
+.horizontal-nav-item:hover:not(:disabled) {
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.05);
+}
+
+.horizontal-nav-item.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+}
+
+.horizontal-nav-item:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nav-item-icon {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item-label {
+  font-weight: 600;
+}
+
+.nav-item-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.4rem;
+  background: #ef4444;
+  color: white;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/* Dark Mode */
+.horizontal-nav.dark {
+  background: #111827;
+  border-bottom-color: #1f2937;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.2);
+}
+
+.horizontal-nav.dark .horizontal-nav-item {
+  color: #94a3b8;
+}
+
+.horizontal-nav.dark .horizontal-nav-item:hover:not(:disabled) {
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.horizontal-nav.dark .horizontal-nav-item.active {
+  color: #667eea;
+}
+
+.horizontal-nav.dark .horizontal-nav-container::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .horizontal-nav-container {
+    padding: 0 1rem;
+    gap: 0.25rem;
+  }
+
+  .horizontal-nav-item {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .nav-item-icon {
+    font-size: 1rem;
+  }
+}
+
