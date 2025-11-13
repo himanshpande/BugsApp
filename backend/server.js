@@ -35,6 +35,7 @@ const startServer = async () => {
     app.use('/api/notes', require('./routes/notes'));
     app.use('/api/posts', require('./routes/postRoutes'));
     app.use('/api/chat', require('./routes/chat'));
+    app.use('/api/email', require('./routes/emailRoutes'));
 
     console.log('All routes loaded successfully');
 
